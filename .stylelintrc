@@ -1,0 +1,23 @@
+{
+	"processors": [
+		"stylelint-processor-html"
+	],
+	"rules": {
+		"selector-pseudo-class-no-unknown": [
+			true,
+			{
+				"ignorePseudoClasses": [
+					"deep"
+				]
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": [
+				"src/**/*.vue"
+			],
+			"customSyntax": "postcss-html"
+		}
+	]
+}

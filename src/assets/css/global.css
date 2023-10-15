@@ -1,0 +1,134 @@
+html {
+	--color-text: #323232;
+	--color-paper: #ffffff;
+	--color-accent: #61bddf;
+	--color-contrast: #b9c038;
+	--color-border: #cccccc;
+	--color-background: #eeeeee;
+	--shadow-base: 0 1px 1px #5555551f, 0 2px 2px #5555553d;
+	--shadow-rotated: 1px 1px 1px #5555551f, 2px 2px 2px #5555553d;
+	--gradient-sky: linear-gradient(#71bddf, var(--color-accent));
+	min-width: 320px;
+	min-height: 100vh;
+	overflow-x: hidden;
+	overflow-anchor: none;
+	scroll-behavior: smooth;
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: 'Manrope', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--color-text);
+	background-image: var(--gradient-sky);
+	-webkit-tap-highlight-color: transparent;
+
+	@media (--tablet-laptop-desktop) {
+		font-size: 18px;
+	}
+
+	@media (--desktop) {
+		font-size: 20px;
+	}
+}
+
+body {
+	margin: 0;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+	font: inherit;
+	text-decoration-skip-ink: none;
+	color: inherit;
+	transition-property: color, opacity, background-color, background-image, border-color, box-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+a,
+button {
+	&:hover {
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.3;
+	}
+}
+
+a {
+	font-weight: 600;
+	color: var(--color-accent);
+	border-radius: 0.5em;
+}
+
+input,
+select,
+textarea {
+	box-sizing: border-box;
+	-webkit-text-fill-color: currentColor;
+	box-shadow: none;
+
+	&::placeholder {
+		color: inherit;
+		opacity: 0.3;
+	}
+}
+
+input {
+	&[type='number'] {
+		appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+		}
+	}
+
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
+
+	&:-webkit-autofill {
+		box-shadow: none;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	fill: currentColor;
+}
+
+:focus {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+
+	@supports selector(:focus-visible) {
+		outline: none;
+	}
+}
+
+:focus-visible {
+	text-decoration: none;
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+
+	&:active {
+		outline: none;
+	}
+}
